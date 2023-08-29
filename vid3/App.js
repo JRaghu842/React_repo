@@ -28,43 +28,52 @@ import ReactDOM from "react-dom/client";
 //   onesection,
 // ]);
 
-const heading1 = React.createElement(
-  "h1",
-  { id: "heading1", key: "keyheading1" },
-  "Namaste Readt Heading"
+// const heading1 = React.createElement(
+//   "h1",
+//   { id: "heading1", key: "keyheading1" },
+//   "Namaste Readt Heading"
+// );
+
+// const li1 = React.createElement(
+//   "li",
+//   { id: "li1", key: "keyli1" },
+//   "About  us"
+// );
+
+// const li2 = React.createElement(
+//   "li",
+//   { id: "li2", key: "keyli2" },
+//   "Support us"
+// );
+
+// const li3 = React.createElement(
+//   "li",
+//   { id: "li3", key: "keyli3" },
+//   "Contact us"
+// );
+
+// const ullist = React.createElement("ul", { id: "ullist", key: "keydiv" }, [
+//   li1,
+//   li2,
+//   li3,
+// ]);
+
+// const newheading = <h1 key="newheadingKey">New Namaste React</h1>;
+
+// const container = React.createElement("div", { id: "container" }, [
+//   heading1,
+//   ullist,
+//   newheading,
+// ]);
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(container);
+
+let heading = (
+  <h1 id="JSXheading" key="JSX_Headin_Key">
+    JSX Namaste React
+  </h1>
 );
-
-const li1 = React.createElement(
-  "li",
-  { id: "li1", key: "keyli1" },
-  "About  us"
-);
-
-const li2 = React.createElement(
-  "li",
-  { id: "li2", key: "keyli2" },
-  "Support us"
-);
-
-const li3 = React.createElement(
-  "li",
-  { id: "li3", key: "keyli3" },
-  "Contact us"
-);
-
-const ullist = React.createElement("ul", { id: "ullist", key: "keydiv" }, [
-  li1,
-  li2,
-  li3,
-]);
-
-const newheading = <h1>New Namaste React</h1>;
-
-const container = React.createElement("div", { id: "container" }, [
-  heading1,
-  ullist,
-  newheading,
-]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(container);
+root.render(heading);
