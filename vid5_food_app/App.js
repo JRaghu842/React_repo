@@ -29,5 +29,23 @@ let HeaderComponent = () => {
   );
 };
 
+let BodyComponent = () => {
+  return <h1>Body</h1>;
+};
+
+let FooterComponent = () => {
+  return <h1>Footer</h1>;
+};
+
+let Applayout = () => {
+  return (
+    <>
+      <HeaderComponent />
+      <BodyComponent />
+      <FooterComponent />
+    </>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent />);
+root.render(<Applayout />);
