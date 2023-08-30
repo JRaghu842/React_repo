@@ -69,11 +69,51 @@ import ReactDOM from "react-dom/client";
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(container);
 
-let heading = (
+// ///////////////////////////////////////////////////////////////////////////////
+
+// let heading = (
+//   <h1 id="JSXheading" key="JSX_Headin_Key">
+//     JSX Namaste React
+//   </h1>
+// );
+
+// let HeaderComponent = () => {
+//   return (
+//     <div>
+//       {heading}
+//       <h2 id="head2_1" key="keyhead2_1">
+//         Namaste React head2_1
+//       </h2>
+//       <h2 id="head2_2" key="keyhead2_2">
+//         Namaste React head2_2
+//       </h2>
+//     </div>
+//   );
+// };
+
+// //////////////////////////////////////////////////////////////////
+
+let Heading = () => (
   <h1 id="JSXheading" key="JSX_Headin_Key">
     JSX Namaste React
   </h1>
 );
 
+let HeaderComponent = () => {
+  return (
+    <div>
+      {/* {Heading()} */}
+      {/* OR */}
+      <Heading />
+      <h2 id="head2_1" key="keyhead2_1">
+        Namaste React head2_1
+      </h2>
+      <h2 id="head2_2" key="keyhead2_2">
+        Namaste React head2_2
+      </h2>
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeaderComponent />);
