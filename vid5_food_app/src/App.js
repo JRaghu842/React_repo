@@ -1,17 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-let Title = () => {
-  return (
-    <a href="/">
-      <img
-        className="logo_img"
-        alt="logo"
-        src="https://yt3.googleusercontent.com/HipIhegQlrlSzBGZSUtOPYyA2VGbo2qyXmIdYNkodW-HVF01t5CX-MrXoDKnf9R5UErOmCbnbA=s900-c-k-c0x00ffffff-no-rj"
-      />
-    </a>
-  );
-};
+import Title from "./components/Title";
 
 let HeaderComponent = () => {
   return (
@@ -827,7 +817,7 @@ let resturentlist = [
 //   );
 // };
 
-// Now Finally we can do this.....................
+// Now Finally we can do this.................................
 
 let ResturantCard = ({ cloudinaryImageId, name, cuisines, avgRating }) => {
   return (
@@ -841,7 +831,7 @@ let ResturantCard = ({ cloudinaryImageId, name, cuisines, avgRating }) => {
       />
       <h2>{name}</h2>
       <h3>{cuisines.join(", ")}</h3>
-      <h3>{avgRating} Stars</h3>
+      <h3>{avgRating} Star</h3>
     </div>
   );
 };
@@ -850,14 +840,26 @@ let BodyComponent = () => {
   return (
     <div className="all_resturants">
       {resturentlist.map((restaurant) => {
-        return <ResturantCard {...restaurant.info} />;
+        return <ResturantCard {...restaurant.info} key={restaurant.info.id} />;
       })}
     </div>
   );
 };
 
+// this code related to body including resturentlist, resturentCard and BodyComponent is a kind of "config driven ui" code meaning, if we just add new resturent in resturent list it will automaticlly updates the content page.
+
 let FooterComponent = () => {
-  return <h1>Footer</h1>;
+  return (
+    <div className="footerdiv">
+      <a href="/">Instagram</a>
+      <p>
+        Address: 8th main road, 4th block, <br /> basavanagudi, bangalore
+      </p>
+      <a href="/">Facebook</a>
+      <p>Licence: all rights are resvered under FBI</p>
+      <a href="/">Mail</a>
+    </div>
+  );
 };
 
 let Applayout = () => {
