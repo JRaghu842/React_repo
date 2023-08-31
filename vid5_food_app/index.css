@@ -7,8 +7,7 @@
 
 .logo_img{
     width: 100px;
-    border: 1px solid rgb(255, 0, 0);
-
+    /* border: 1px solid rgb(255, 0, 0); */
 }
 
 .nav_items > ul{
@@ -17,5 +16,21 @@
 }
 
 .nav_items > ul > li{
-    padding: 12px;
+    padding: 10px;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card > img{
+    width: 100%;
+}
+
+.all_resturants{
+    display: flex;
+    flex-wrap: wrap;
 }
