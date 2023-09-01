@@ -16,7 +16,7 @@ let BodyComponent = () => {
 
   //   let [searchUpdate, setSearchUpdate] = useState("False");
 
-  let [searchfilter, setSearchFilter] = useState(resturentlist);
+  let [searchfilterarray, setSearcharrayFilter] = useState(resturentlist);
 
   return (
     <>
@@ -45,7 +45,7 @@ let BodyComponent = () => {
             let data = filterData(searchText, resturentlist);
 
             // step 2. update the state searchFilter on click
-            setSearchFilter(data);
+            setSearcharrayFilter(data);
           }}
         >
           Search
@@ -53,7 +53,7 @@ let BodyComponent = () => {
       </div>
 
       <div className="all_resturants">
-        {searchfilter.map((restaurant) => {
+        {searchfilterarray.map((restaurant) => {
           return (
             <ResturantCard {...restaurant.info} key={restaurant.info.id} />
           );
