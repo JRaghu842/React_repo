@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     margin: 10px;
-    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .logo_img{
@@ -21,13 +22,16 @@
 
 .card {
     width: 200px;
-    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 10px;
     padding: 10px;
+    border-radius: 8px;
 }
 
 .card > img{
     width: 100%;
+    border-radius: 8px;
+
 }
 
 
@@ -55,6 +59,7 @@
 
 .search-container{
     margin: 10px;
+    margin-top: 20px;
 }
 
 .search-input{

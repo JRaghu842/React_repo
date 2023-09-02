@@ -6,7 +6,7 @@ let ResturantCard = ({ cloudinaryImageId, name, cuisines, avgRating }) => {
       <img alt="resturant_img" src={IMG_URL + cloudinaryImageId} />
       <h2>{name}</h2>
       <h3>{cuisines.join(", ")}</h3>
-      <h3>{avgRating} Star</h3>
+      <h3>Rating: {avgRating} Star</h3>
     </div>
   );
 };
