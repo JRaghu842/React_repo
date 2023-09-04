@@ -1,7 +1,7 @@
 import { resturentlist } from "../config";
 import ResturantCard from "./ResturantCard";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function filterData(searchText, resturentlist) {
   let filteredData = resturentlist.filter((rest) =>
@@ -13,10 +13,13 @@ function filterData(searchText, resturentlist) {
 
 let BodyComponent = () => {
   let [searchText, setSearchText] = useState("");
+  let [searchfilterarray, setSearcharrayFilter] = useState(resturentlist);
+
+  useEffect(() => {
+    console.log("This is to check useEffect");
+  }, [searchText, searchfilterarray]);
 
   //   let [searchUpdate, setSearchUpdate] = useState("False");
-
-  let [searchfilterarray, setSearcharrayFilter] = useState(resturentlist);
 
   return (
     <>
