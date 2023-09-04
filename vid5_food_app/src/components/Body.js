@@ -15,9 +15,25 @@ let BodyComponent = () => {
   let [searchText, setSearchText] = useState("");
   let [searchfilterarray, setSearcharrayFilter] = useState(resturentlist);
 
+  // Empty depencendy array [] : only once useEffect is called after initial render
+  //  depencendy array with states [searchText, searchFilter] : one time at initialy + Every time any change in state
+
   useEffect(() => {
-    console.log("This is to check useEffect");
-  }, [searchText, searchfilterarray]);
+    getResturants();
+  }, []);
+
+  async function getResturants() {
+    let datas = await fetch(
+      "https://www.swiggy.com/mapi/homepage/getCards?lat=12.9715987&lng=77.5945627"
+    );
+    let json = await datas.json();
+    setSearcharrayFilter(
+      json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  }
+
+  console.log("render");
 
   //   let [searchUpdate, setSearchUpdate] = useState("False");
 
