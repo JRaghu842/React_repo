@@ -20,6 +20,8 @@ let BodyComponent = () => {
 
   return (
     <>
+      {/* ----------------------------- search functionality ------------------------- */}
+
       <div className="search-container">
         <input
           className="search-input"
@@ -49,6 +51,35 @@ let BodyComponent = () => {
           }}
         >
           Search
+        </button>
+      </div>
+
+      {/* ---------------------------- sort functionality --------------------------------------- */}
+
+      <div className="sort-container">
+        <button
+          className="inc_btn"
+          onClick={() => {
+            let data = filterData(searchText, resturentlist);
+
+            setSearcharrayFilter(
+              data.sort((a, b) => a.info.name.localeCompare(b.info.name))
+            );
+          }}
+        >
+          Sort Inc Order
+        </button>
+        <button
+          className="desc_btn"
+          onClick={() => {
+            let data = filterData(searchText, resturentlist);
+
+            setSearcharrayFilter(
+              data.sort((a, b) => b.info.name.localeCompare(a.info.name))
+            );
+          }}
+        >
+          Sort Desc Order
         </button>
       </div>
 
