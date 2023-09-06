@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HeaderComponent from "./components/Header";
 import BodyComponent from "./components/Body";
 import FooterComponent from "./components/Footer";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
 
 // let ResturantCard = (props) => {
 //   console.log(props);
@@ -110,5 +114,21 @@ let Applayout = () => {
   );
 };
 
+let appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Applayout />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Applayout />);
+root.render(<RouterProvider router={appRouter} />);

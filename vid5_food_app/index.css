@@ -17,8 +17,15 @@
     display: flex;
 }
 
-.nav_items > ul > li{
+
+.nav_items > ul  li{
     padding: 10px;
+    color: black;
+    font-size: 18px;
+}
+
+.nav_items a{
+    text-decoration: none;
 }
 
 .card {
