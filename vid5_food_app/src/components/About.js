@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div>
-      <section>
+    <div className="About_container">
+      <section className="abt-section-1">
         <h1>This is About page for Foodvilla company pvt LTD.</h1>
         <p>Hello! wellcome to the world of food, Just EAT and repEAT 😋</p>
       </section>
@@ -13,7 +13,7 @@ const About = () => {
           sustainability and social responsibility.
         </p>
       </section>
-      <section>
+      <section className="abt-section-2">
         <h2>Our Values</h2>
         <ul>
           <li>Customer Satisfaction</li>
@@ -22,21 +22,30 @@ const About = () => {
           <li>Community Engagement</li>
         </ul>
       </section>
-      <div>
-        <h2>Meet Our Team</h2>
+      <h2 className="abt-h2">Meet Our Team</h2>
+      <div className="abt-team-div">
         <div className="team-member">
-          <img src="john-doe.jpg" alt="John Doe - CEO" />
-          <h3>John Doe</h3>
+          <img
+            src="https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080194-7382724028-unkno.png"
+            alt="Roronoro ZORO - CEO"
+          />
+          <h3>Roronoro Zoro</h3>
           <p>CEO</p>
         </div>
         <div className="team-member">
-          <img src="jane-smith.jpg" alt="Jane Smith - CTO" />
-          <h3>Jane Smith</h3>
+          <img
+            src="https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078671-9363995852-39fc3.jpg"
+            alt="ACE - CTO"
+          />
+          <h3> Ace D Roger</h3>
           <p>CTO</p>
         </div>
         <div className="team-member">
-          <img src="alice-johnson.jpg" alt="Alice Johnson - CFO" />
-          <h3>Alice Johnson</h3>
+          <img
+            src="https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080202-1635462455-unkno.png"
+            alt="LUFFy - CFO"
+          />
+          <h3> Monkey D Loffy</h3>
           <p>CFO</p>
         </div>
       </div>

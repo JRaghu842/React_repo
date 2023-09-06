@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div>
+    <div className="contact_container">
       <section>
         <h2>Contact Information</h2>
         <address>
@@ -10,9 +10,9 @@ const Contact = () => {
           <p>Phone: (123) 456-7890</p>
         </address>
       </section>
+      <h2 className="abt-h2">Contact Form</h2>
       <section>
-        <h2>Contact Form</h2>
-        <form>
+        <form className="cnct-form">
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <label htmlFor="email">Email:</label>

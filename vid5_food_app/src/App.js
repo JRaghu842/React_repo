@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import HeaderComponent from "./components/Header";
 import BodyComponent from "./components/Body";
@@ -108,7 +108,7 @@ let Applayout = () => {
   return (
     <>
       <HeaderComponent />
-      <BodyComponent />
+      <Outlet />
       <FooterComponent />
     </>
   );
@@ -119,14 +119,20 @@ let appRouter = createBrowserRouter([
     path: "/",
     element: <Applayout />,
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
+    children: [
+      {
+        path: "/",
+        element: <BodyComponent />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
   },
 ]);
 
