@@ -8,6 +8,7 @@ import FooterComponent from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import ResturantMenu from "./components/ResturantMenu";
 
 // let ResturantCard = (props) => {
 //   console.log(props);
@@ -131,6 +132,10 @@ let appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/resturant/:id",
+        element: <ResturantMenu />,
       },
     ],
   },

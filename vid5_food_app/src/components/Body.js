@@ -3,6 +3,7 @@ import ShimmerUIComponent from "./shimmerui";
 import FilterAlert from "./FilterAlert";
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, resturentlist) {
   let filteredData = resturentlist.filter((rest) =>
@@ -29,10 +30,11 @@ let BodyComponent = () => {
       let datas = await fetch(
         "https://www.swiggy.com/mapi/homepage/getCards?lat=12.9715987&lng=77.5945627"
       );
-      let json = await datas.json();
+      let jsons = await datas.json();
       let resturants =
-        json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
+        jsons?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle
           ?.restaurants;
+      console.log(datas);
       setSearcharrayFilter(resturants);
       setapiData(resturants);
     } catch (error) {
@@ -114,7 +116,12 @@ let BodyComponent = () => {
       <div className="all_resturants">
         {searchfilterarray.map((restaurant) => {
           return (
-            <ResturantCard {...restaurant.info} key={restaurant.info.id} />
+            <Link
+              to={"/resturant/" + restaurant.info.id}
+              key={restaurant.info.id}
+            >
+              <ResturantCard {...restaurant.info} />
+            </Link>
           );
         })}
       </div>
