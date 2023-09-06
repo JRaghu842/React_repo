@@ -1,7 +1,6 @@
-import { resturentlist } from "../config";
 import ResturantCard from "./ResturantCard";
 import ShimmerUIComponent from "./shimmerui";
-import FilterAlert from "./FilterShimer";
+import FilterAlert from "./FilterAlert";
 
 import { useState, useEffect } from "react";
 
@@ -40,8 +39,6 @@ let BodyComponent = () => {
       console.log("Error in fetching data :" + error);
     }
   }
-
-  console.log("render");
 
   //   let [searchUpdate, setSearchUpdate] = useState("False");
 
