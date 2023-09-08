@@ -1,3 +1,6 @@
+import { Link, Outlet } from "react-router-dom";
+import CareerClassCompo from "./CareerClass";
+
 const About = () => {
   return (
     <div className="About_container">
@@ -49,6 +52,13 @@ const About = () => {
           <p>CFO</p>
         </div>
       </div>
+      <div className="career">
+        <CareerClassCompo name={"Class based Props"} />
+      </div>
+      <Link to={"/about/profile"}>
+        <h3 className="abt_auth">CLICK HERE TO GET MORE ABOUT AUTHOR</h3>
+      </Link>
+      <Outlet />
     </div>
   );
 };

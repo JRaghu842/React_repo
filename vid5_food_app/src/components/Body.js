@@ -32,7 +32,7 @@ let BodyComponent = () => {
       );
       let jsons = await datas.json();
       let resturants =
-        jsons?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle
+        jsons?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
           ?.restaurants;
       console.log(datas);
       setSearcharrayFilter(resturants);
@@ -121,6 +121,13 @@ let BodyComponent = () => {
               key={restaurant.info.id}
             >
               <ResturantCard {...restaurant.info} />
+
+              {/* <ResturantCard
+                cloudinaryImageId={restaurant.info.cloudinaryImageId}
+                name={restaurant.info.name}
+                cuisines={restaurant.info.cuisines}
+                avgRating={restaurant.info.avgRating}
+              /> */}
             </Link>
           );
         })}

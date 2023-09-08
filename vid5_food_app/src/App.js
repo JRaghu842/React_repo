@@ -9,6 +9,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
+import Profile from "./components/Profile";
 
 // let ResturantCard = (props) => {
 //   console.log(props);
@@ -128,6 +129,12 @@ let appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile name={"Raghu"} />,
+          },
+        ],
       },
       {
         path: "/contact",
