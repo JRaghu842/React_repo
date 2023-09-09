@@ -85,6 +85,14 @@ class About extends React.Component {
     console.log("Parent-componentDidMount");
   }
 
+  componentDidUpdate() {
+    console.log("Parent-componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("Parent-componentWillUnmount");
+  }
+
   render() {
     console.log("Parent-render");
     return (
