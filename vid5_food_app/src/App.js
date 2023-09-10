@@ -1,15 +1,17 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import HeaderComponent from "./components/Header";
 import BodyComponent from "./components/Body";
 import FooterComponent from "./components/Footer";
-import About from "./components/About";
+// import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/Profile";
+import ShimmerUIComponent from "./components/shimmerui";
+// import Instamart from "./components/Instamart";
 
 // let ResturantCard = (props) => {
 //   console.log(props);
@@ -106,6 +108,10 @@ import Profile from "./components/Profile";
 
 // this code related to body including resturentlist, resturentCard and BodyComponent is a kind of "config driven ui" code meaning, if we just add new resturent in resturent list it will automaticlly updates the content page.
 
+let Instamart = lazy(() => import("./components/Instamart"));
+
+let About = lazy(() => import("./components/About"));
+
 let Applayout = () => {
   return (
     <>
@@ -128,7 +134,18 @@ let appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense
+            fallback={
+              <h1>
+                I can write any piece of jsx here or I can add Shimmer component
+                here also
+              </h1>
+            }
+          >
+            <About />
+          </Suspense>
+        ),
         children: [
           {
             path: "profile",
@@ -143,6 +160,14 @@ let appRouter = createBrowserRouter([
       {
         path: "/resturant/:id",
         element: <ResturantMenu />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<ShimmerUIComponent />}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },
