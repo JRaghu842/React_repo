@@ -5,6 +5,7 @@ import { filterData } from "../utils/helper";
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 let BodyComponent = () => {
   let [searchText, setSearchText] = useState("");
@@ -36,6 +37,16 @@ let BodyComponent = () => {
   }
 
   //   let [searchUpdate, setSearchUpdate] = useState("False");
+
+  let internetStatus = useOnline();
+
+  if (internetStatus === false) {
+    return <h1>🔴 You are offline! Please check your internet connection </h1>;
+  }
+
+  if (!apiData) {
+    return null;
+  }
 
   return apiData.length === 0 ? (
     <ShimmerUIComponent />

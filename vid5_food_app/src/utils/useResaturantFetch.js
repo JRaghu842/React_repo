@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FETCH_MENU_URL } from "../config";
 
 const useRestaurantFetch = (id) => {
   const [restau, setRestau] = useState([]);
@@ -11,10 +12,7 @@ const useRestaurantFetch = (id) => {
 
   async function getResturantInfo() {
     try {
-      let datas = await fetch(
-        "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=15.3647083&lng=75.1239547&restaurantId=" +
-          id
-      );
+      let datas = await fetch(FETCH_MENU_URL + id);
       let json = await datas.json();
       let resturantData = json?.data?.cards[0]?.card?.card?.info;
       let dishData =

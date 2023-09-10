@@ -707,3 +707,6 @@ export let resturentlist = [
     },
   },
 ];
+
+export let FETCH_MENU_URL =
+  "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=15.3647083&lng=75.1239547&restaurantId=";
