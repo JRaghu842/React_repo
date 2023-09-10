@@ -1,17 +1,10 @@
 import ResturantCard from "./ResturantCard";
 import ShimmerUIComponent from "./shimmerui";
 import FilterAlert from "./FilterAlert";
+import { filterData } from "../utils/helper";
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-function filterData(searchText, resturentlist) {
-  let filteredData = resturentlist.filter((rest) =>
-    rest?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-
-  return filteredData;
-}
 
 let BodyComponent = () => {
   let [searchText, setSearchText] = useState("");
