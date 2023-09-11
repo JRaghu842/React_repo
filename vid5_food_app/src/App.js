@@ -109,8 +109,9 @@ import ShimmerUIComponent from "./components/shimmerui";
 // this code related to body including resturentlist, resturentCard and BodyComponent is a kind of "config driven ui" code meaning, if we just add new resturent in resturent list it will automaticlly updates the content page.
 
 let Instamart = lazy(() => import("./components/Instamart"));
-
 let About = lazy(() => import("./components/About"));
+
+// Never lazy load inside Component. Always lazy load before component creating starts.
 
 let Applayout = () => {
   return (

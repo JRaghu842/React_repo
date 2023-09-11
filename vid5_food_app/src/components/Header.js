@@ -5,7 +5,7 @@ let Title = () => {
   return (
     <a href="/">
       <img
-        className="logo_img"
+        className="h-24 pl-3"
         alt="logo"
         src="https://lh5.googleusercontent.com/p/AF1QipOhHeCaQ6Xb6RVf3R_ZBTbDK4FIug_203rKsHLT"
       />
@@ -16,26 +16,27 @@ let Title = () => {
 let HeaderComponent = () => {
   let [isLogedIn, setisLogedIn] = useState(false);
   return (
-    <div className="header">
+    <div className="flex justify-between items-center">
       <Title />
       <div className="nav_items">
-        <ul>
+        <ul className="flex">
           <Link to="/">
-            <li>Home</li>
+            <li className="px-2">Home</li>
           </Link>
           <Link to="/about">
-            <li>About us</li>
+            <li className="px-2">About us</li>
           </Link>
           <Link to="/contact">
-            <li>Contact us</li>
+            <li className="px-2">Contact us</li>
           </Link>
           <Link to="/instamart">
-            <li>Instamart</li>
+            <li className="px-2">Instamart</li>
           </Link>
         </ul>
       </div>
       {isLogedIn ? (
         <button
+          className="pr-2"
           onClick={() => {
             setisLogedIn(false);
           }}
@@ -44,6 +45,7 @@ let HeaderComponent = () => {
         </button>
       ) : (
         <button
+          className="pr-2"
           onClick={() => {
             setisLogedIn(true);
           }}

@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* 
 .header{
     display: flex;
     justify-content: space-between;
@@ -9,7 +16,6 @@
 
 .logo_img{
     width: 100px;
-    /* border: 1px solid rgb(255, 0, 0); */
 }
 
 .nav_items > ul{
@@ -171,9 +177,7 @@ a {
     padding: 15px
 }
 
-/* .abt-section-1{
-    text-align: center;
-} */
+
 
 .abt_auth{
     color: rgb(4, 193, 41);
@@ -185,4 +189,4 @@ a {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-}
+} */
