@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 let FooterComponent = () => {
   return (
     <>
-      <div className="footerdiv">
+      <div className="m-3 p-3 grid border-2 border-black grid-cols-2 text-center items-center justify-between">
         <a href="/">Instagram</a>
         <p>
           Address: 8th main road, 4th block, <br /> basavanagudi, bangalore

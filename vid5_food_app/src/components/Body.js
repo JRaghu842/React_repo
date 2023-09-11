@@ -56,9 +56,9 @@ let BodyComponent = () => {
     <>
       {/* ----------------------------- search functionality ------------------------- */}
 
-      <div className="search-container">
+      <div className="my-3">
         <input
-          className="search-input"
+          className="ml-3 border-2 px-3 py-2 border-gray-300 rounded-lg"
           type="text"
           placeholder="Search"
           value={searchText}
@@ -68,7 +68,7 @@ let BodyComponent = () => {
         />
         {/* <h1>{searchUpdate}</h1> */}
         <button
-          className="search-btn"
+          className="ml-3 border-2 px-5 py-2 border-black rounded-lg"
           onClick={() => {
             //if (searchUpdate === "False") {
 
@@ -90,9 +90,9 @@ let BodyComponent = () => {
 
       {/* ---------------------------- sort functionality --------------------------------------- */}
 
-      <div className="sort-container">
+      <div className="my-3">
         <button
-          className="inc_btn"
+          className="ml-3 border-2 px-5 py-2 border-black rounded-lg"
           onClick={() => {
             let data = filterData(searchText, apiData);
 
@@ -104,7 +104,7 @@ let BodyComponent = () => {
           Sort Inc Order
         </button>
         <button
-          className="desc_btn"
+          className="ml-3 border-2 px-5 py-2 border-black rounded-lg"
           onClick={() => {
             let data = filterData(searchText, apiData);
 
@@ -117,7 +117,7 @@ let BodyComponent = () => {
         </button>
       </div>
 
-      <div className="all_resturants">
+      <div className="flex flex-wrap">
         {searchfilterarray.map((restaurant) => {
           return (
             <Link
