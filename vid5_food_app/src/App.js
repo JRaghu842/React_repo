@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -11,6 +11,7 @@ import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/Profile";
 import ShimmerUIComponent from "./components/shimmerui";
+import userContext from "./utils/userContext";
 // import Instamart from "./components/Instamart";
 
 // let ResturantCard = (props) => {
@@ -112,14 +113,32 @@ let Instamart = lazy(() => import("./components/Instamart"));
 let About = lazy(() => import("./components/About"));
 
 // Never lazy load inside Component. Always lazy load before component creating starts.
+{
+}
+// without dynamic context
+// let Applayout = () => {
+//   return (
+//     <>
+//       <HeaderComponent />
+//       <Outlet />
+//       <FooterComponent />
+//     </>
+//   );
+// };
 
+// with dynamic context this will overwrite static context data
 let Applayout = () => {
+  let [user, setUser] = useState({
+    name: "Raghu",
+    email: "Raghu@gmail.com",
+  });
+
   return (
-    <>
+    <userContext.Provider value={{ user: user, setUser: setUser }}>
       <HeaderComponent />
       <Outlet />
       <FooterComponent />
-    </>
+    </userContext.Provider>
   );
 };
 

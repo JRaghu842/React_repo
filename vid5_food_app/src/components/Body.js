@@ -2,15 +2,17 @@ import ResturantCard from "./ResturantCard";
 import ShimmerUIComponent from "./shimmerui";
 import FilterAlert from "./FilterAlert";
 import { filterData } from "../utils/helper";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import userContext from "../utils/userContext.js";
 
 let BodyComponent = () => {
   let [searchText, setSearchText] = useState("");
   let [searchfilterarray, setSearcharrayFilter] = useState([]);
   let [apiData, setapiData] = useState([]);
+
+  let { user, setUser } = useContext(userContext);
 
   // Empty depencendy array [] : only once useEffect is called after initial render
   //  depencendy array with states [searchText, searchFilter] : one time at initialy + Every time any change in state
@@ -54,8 +56,7 @@ let BodyComponent = () => {
     <FilterAlert />
   ) : (
     <>
-      {/* ----------------------------- search functionality ------------------------- */}
-
+      {/* ----------------------------- search functionality ------------------------------------ */}
       <div className="my-3">
         <input
           className="ml-3 border-2 px-3 py-2 border-gray-300 rounded-lg"
@@ -116,6 +117,31 @@ let BodyComponent = () => {
           Sort Desc Order
         </button>
       </div>
+
+      {/* -----------------------------Input for name and email change--------------------------- */}
+      <div>
+        <input
+          className="ml-3 border-2 px-3 py-2 border-gray-300 rounded-lg"
+          value={user.name}
+          onChange={(e) => {
+            setUser({
+              ...user,
+              name: e.target.value,
+            });
+          }}
+        />
+        <input
+          className="ml-3 border-2 px-3 py-2 border-gray-300 rounded-lg"
+          value={user.email}
+          onChange={(e) => {
+            setUser({
+              ...user,
+              email: e.target.value,
+            });
+          }}
+        />
+      </div>
+      {/* --------------------------------Resturant cards here----------------------------------- */}
 
       <div className="flex flex-wrap">
         {searchfilterarray.map((restaurant) => {
