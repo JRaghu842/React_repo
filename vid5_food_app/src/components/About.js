@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import CareerClassCompo from "./CareerClass";
 import React, { useEffect } from "react";
+import userContext from "../utils/userContext";
 
 // Functional Component ABOUT
 
@@ -97,6 +98,13 @@ class About extends React.Component {
     console.log("Parent-render");
     return (
       <div className="About_container">
+        <userContext.Consumer>
+          {({ user }) => (
+            <h2 className="text-xl font-bold m-4">
+              Name: {user.name} and Email: {user.email}
+            </h2>
+          )}
+        </userContext.Consumer>
         <section className="abt-section-1">
           <h1>This is About page for Foodvilla company pvt LTD.</h1>
           <p>Hello! wellcome to the world of food, Just EAT and repEAT 😋</p>
