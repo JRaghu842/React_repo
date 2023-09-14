@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 let Title = () => {
   return (
@@ -19,6 +20,8 @@ let HeaderComponent = () => {
 
   let { user } = useContext(userContext);
 
+  let cartSlice = useSelector((store) => store.cart.items);
+
   return (
     <div className="flex justify-between items-center bg-blue-100 shadow-lg sm:bg-pink-100 md:bg-purple-100">
       <Title />
@@ -34,7 +37,7 @@ let HeaderComponent = () => {
             <li className="px-2">Contact us</li>
           </Link>
           <Link to="/cart">
-            <li className="px-2">Cart</li>
+            <li className="px-2">Cart {cartSlice.length} items</li>
           </Link>
           <Link to="/instamart">
             <li className="px-2">Instamart</li>
