@@ -33,6 +33,9 @@ let HeaderComponent = () => {
           <Link to="/contact">
             <li className="px-2">Contact us</li>
           </Link>
+          <Link to="/cart">
+            <li className="px-2">Cart</li>
+          </Link>
           <Link to="/instamart">
             <li className="px-2">Instamart</li>
           </Link>

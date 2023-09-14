@@ -7,11 +7,14 @@ import BodyComponent from "./components/Body";
 import FooterComponent from "./components/Footer";
 // import About from "./components/About";
 import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/Profile";
 import ShimmerUIComponent from "./components/shimmerui";
 import userContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 // import Instamart from "./components/Instamart";
 
 // let ResturantCard = (props) => {
@@ -134,11 +137,13 @@ let Applayout = () => {
   });
 
   return (
-    <userContext.Provider value={{ user: user, setUser: setUser }}>
-      <HeaderComponent />
-      <Outlet />
-      <FooterComponent />
-    </userContext.Provider>
+    <Provider store={store}>
+      <userContext.Provider value={{ user: user, setUser: setUser }}>
+        <HeaderComponent />
+        <Outlet />
+        <FooterComponent />
+      </userContext.Provider>
+    </Provider>
   );
 };
 
@@ -176,6 +181,10 @@ let appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/resturant/:id",
