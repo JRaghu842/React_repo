@@ -50,9 +50,10 @@ const ResturantMenu = () => {
               <img
                 className="py-3 m-3 w-60"
                 src={IMG_URL + item.card.info.imageId}
+                alt="NO img for this"
               />
               <p>Dish Name: {item.card.info.name}</p>
-              <p>Description: {item.card.info.description}</p>
+              <p>Description: {item.card.info.description}</p>2
               <p>Category: {item.card.info.category}</p>
               <p>
                 Price: ₹{" "}
