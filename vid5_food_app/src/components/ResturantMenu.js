@@ -13,8 +13,8 @@ const ResturantMenu = () => {
 
   let dispatch = useDispatch();
 
-  let handleAddItem = () => {
-    dispatch(addItem("Mango"));
+  let handleAddItem = (item) => {
+    dispatch(addItem(item));
   };
 
   return restau.length === 0 ? (
@@ -47,13 +47,21 @@ const ResturantMenu = () => {
         <div>
           {dish.map((item) => (
             <div key={item.card.info.id}>
+              <img
+                className="py-3 m-3 w-60"
+                src={IMG_URL + item.card.info.imageId}
+              />
               <p>Dish Name: {item.card.info.name}</p>
               <p>Description: {item.card.info.description}</p>
               <p>Category: {item.card.info.category}</p>
-              <p>Price: ₹ {item.card.info.price / 100}</p>
+              <p>
+                Price: ₹{" "}
+                {item.card.info.price / 100 ||
+                  item.card.info.defaultPrice / 100}
+              </p>
               <button
                 className="py-3 px-5 m-3 bg-green-200"
-                onClick={() => handleAddItem()}
+                onClick={() => handleAddItem(item.card.info)}
               >
                 ADD ITEM
               </button>

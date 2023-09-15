@@ -22,6 +22,8 @@ let HeaderComponent = () => {
 
   let cartSlice = useSelector((store) => store.cart.items);
 
+  console.log(cartSlice);
+
   return (
     <div className="flex justify-between items-center bg-blue-100 shadow-lg sm:bg-pink-100 md:bg-purple-100">
       <Title />

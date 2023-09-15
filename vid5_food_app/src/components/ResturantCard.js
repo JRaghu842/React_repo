@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import { IMG_URL } from "../config";
+import { useContext } from "react";
 import userContext from "../utils/userContext";
 
 let ResturantCard = ({ cloudinaryImageId, name, cuisines, avgRating }) => {
