@@ -1,1 +1,18 @@
-{}
+{
+    "presets": [
+        ["@babel/preset-env", { "targets": { "node": "current" } }],
+        ["@babel/preset-react", { "runtime": "automatic" }]
+        
+    ]
+
+}
+
+
+// we can write the below thing in  seperate "babel.config.js" file also,  here it's json format , there it will be normal obj formal as written below.
+
+// I need to delete babel.config.js file as it will create conflict with parcel js and babel versions
+
+// module.exports = {
+//   presets: [["@babel/preset-env", { targets: { node: "current" } }]],
+// };
+ 

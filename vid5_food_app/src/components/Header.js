@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import userContext from "../utils/userContext";
 import { useSelector } from "react-redux";
+import useOnline from "../utils/useOnline";
 
 let Title = () => {
   return (
@@ -19,6 +20,8 @@ let HeaderComponent = () => {
   let [isLogedIn, setisLogedIn] = useState(false);
 
   let { user } = useContext(userContext);
+
+  let isOnline = useOnline();
 
   let cartSlice = useSelector((store) => store.cart.items);
 
@@ -46,8 +49,13 @@ let HeaderComponent = () => {
           </Link>
         </ul>
       </div>
-      <div>
+      <div className="flex">
         <h1>{user.name}</h1>
+        {isOnline ? (
+          <h1 className=" pl-2">🟢</h1>
+        ) : (
+          <h1 className=" pl-2"> 🔴</h1>
+        )}
       </div>
       {isLogedIn ? (
         <button
