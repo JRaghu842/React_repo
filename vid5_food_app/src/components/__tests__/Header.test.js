@@ -24,7 +24,6 @@ test("Logo should load on rendering header", () => {
 });
 
 // testing for online status
-
 test("online status should be green on rendering header", () => {
   const header = render(
     <StaticRouter>
@@ -49,7 +48,7 @@ test("cart should have 0 items on rendering header", () => {
     </StaticRouter>
   );
 
-  let onlineStatus = header.getAllByTestId("online-status");
+  let cartcount = header.getByTestId("cart-items");
 
-  expect(onlineStatus[0].innerHTML).toBe("🟢");
+  expect(cartcount.innerHTML).toBe("Cart (0)");
 });

@@ -43,7 +43,9 @@ let HeaderComponent = () => {
             <li className="px-2">Contact us</li>
           </Link>
           <Link to="/cart">
-            <li className="px-2">Cart ({cartSlice.length})</li>
+            <li data-testid="cart-items" className="px-2">
+              Cart ({cartSlice.length})
+            </li>
           </Link>
           <Link to="/instamart">
             <li className="px-2">Instamart</li>
