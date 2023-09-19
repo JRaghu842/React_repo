@@ -8,6 +8,7 @@ let Title = () => {
   return (
     <a href="/">
       <img
+        data-testid="logo"
         className="h-24 p-2 m-2 border-2 border-black "
         alt="logo"
         src="https://lh5.googleusercontent.com/p/AF1QipOhHeCaQ6Xb6RVf3R_ZBTbDK4FIug_203rKsHLT"
@@ -52,7 +53,9 @@ let HeaderComponent = () => {
       <div className="flex">
         <h1>{user.name}</h1>
         {isOnline ? (
-          <h1 className=" pl-2">🟢</h1>
+          <h1 data-testid="online-status" className=" pl-2">
+            🟢
+          </h1>
         ) : (
           <h1 className=" pl-2"> 🔴</h1>
         )}
