@@ -17,6 +17,9 @@ let BodyComponent = () => {
   // Empty depencendy array [] : only once useEffect is called after initial render
   //  depencendy array with states [searchText, searchFilter] : one time at initialy + Every time any change in state
 
+  //"https://www.swiggy.com/mapi/homepage/getCards?lat=12.9715987&lng=77.5945627"
+  //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+
   useEffect(() => {
     getResturants();
   }, []);
@@ -69,6 +72,7 @@ let BodyComponent = () => {
         />
         {/* <h1>{searchUpdate}</h1> */}
         <button
+          data-testid="search-btn"
           className="ml-3 border-2 px-5 py-2 border-black rounded-lg"
           onClick={() => {
             //if (searchUpdate === "False") {
