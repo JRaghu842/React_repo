@@ -18,6 +18,8 @@ test("Logo should load on rendering header", () => {
 
   let logo = header.getAllByTestId("logo");
 
+  //   console.log(logo);
+
   expect(logo[0].src).toBe(
     "https://lh5.googleusercontent.com/p/AF1QipOhHeCaQ6Xb6RVf3R_ZBTbDK4FIug_203rKsHLT"
   );
@@ -35,6 +37,8 @@ test("online status should be green on rendering header", () => {
 
   let onlineStatus = header.getAllByTestId("online-status");
 
+  //   console.log(onlineStatus);
+
   expect(onlineStatus[0].innerHTML).toBe("🟢");
 });
 
@@ -48,7 +52,9 @@ test("cart should have 0 items on rendering header", () => {
     </StaticRouter>
   );
 
-  let cartcount = header.getByTestId("cart-items");
+  let cartcount = header.getAllByTestId("cart-items");
 
-  expect(cartcount.innerHTML).toBe("Cart (0)");
+  //   console.log(cartcount);
+
+  expect(cartcount[0].innerHTML).toBe("Cart (0)");
 });

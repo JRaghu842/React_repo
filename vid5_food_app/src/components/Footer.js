@@ -5,7 +5,7 @@ let FooterComponent = () => {
     <>
       <div className="m-3 p-3 grid border-2 border-black grid-cols-2 text-center items-center justify-between">
         <a href="/">Instagram</a>
-        <p>
+        <p data-testid="address">
           Address: 8th main road, 4th block, <br /> basavanagudi, bangalore
         </p>
         <a href="/">Facebook</a>
