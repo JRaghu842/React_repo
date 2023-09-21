@@ -147,7 +147,7 @@ let BodyComponent = () => {
       </div>
       {/* --------------------------------Resturant cards here----------------------------------- */}
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" data-testid="res-list">
         {searchfilterarray.map((restaurant) => {
           return (
             <Link
